@@ -60,6 +60,7 @@ export default defineConfig({
   integrations: [
       starlight({
           title: 'Indian Olympiad in Informatics Archive',
+          pagination: false,
           head: [
               {
                   tag: 'link',
