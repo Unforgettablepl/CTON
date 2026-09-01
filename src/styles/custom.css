@@ -107,3 +107,20 @@ table td {
 table th {
   padding: 0.75rem 1rem;
 }
+
+/* Math (KaTeX)
+   KaTeX ships at 1.21em so that sub- and superscripts stay legible, but next
+   to Starlight's sans body text the serif math ends up looking oversized.
+   Matching body text exactly puts subscripts at a true 0.7em. This is the
+   dial to turn if math starts reading too small instead. */
+.katex {
+  font-size: 1em;
+}
+
+/* Display math is nowrap by default, so let long formulae scroll
+   instead of pushing the page sideways on narrow screens. */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.5rem;
+}
