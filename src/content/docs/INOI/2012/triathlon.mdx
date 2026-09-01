@@ -134,9 +134,8 @@ int main() {
 ```
 
 :::caution[Watch the accumulator]
-The worst case is $200000 \times 10000 + 20000 = 2000020000$, which does fit in a 32-bit `int`,
-but with under 7% of room left before `INT_MAX`. Using 64-bit costs nothing and saves you from
-redoing that bound during a contest.
+The worst case is $200000 \times 10000 + 20000 = 2000020000$, which technically does fit in a
+32-bit `int`. Just use `long long` anyway and save yourself the headache.
 :::
 
 Time complexity: $O(N \log N)$ for the sort and $O(N)$ for the sweep. Memory is $O(N)$. This fits
