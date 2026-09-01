@@ -126,18 +126,13 @@ table th {
 }
 
 /* Editorial byline
-   Sits directly under the "Editorial" heading, so it must not compete with it.
-   Authored as a raw <h3> rather than markdown so it stays out of the table of
-   contents, since it is attribution rather than a section to navigate to. */
+   Sits just under the problem link at the top of the page, so it reads as
+   attribution rather than a section title. Authored as a raw <h3> rather than
+   markdown so it stays out of the table of contents. */
 .sl-markdown-content h3.editorial-author {
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   font-size: var(--sl-text-sm);
   font-weight: 400;
   color: var(--sl-color-gray-3);
   letter-spacing: 0.01em;
-}
-
-/* Keep the following section from being pushed away by the byline. */
-.sl-markdown-content h3.editorial-author + * {
-  margin-top: 1.5rem;
 }
