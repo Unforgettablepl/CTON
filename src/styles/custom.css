@@ -126,10 +126,9 @@ table th {
 }
 
 /* Editorial byline
-   Sits just under the problem link at the top of the page. Rendered at full h3
-   size to match the other headings. Authored as a raw <h3> rather than markdown
-   so it stays out of the table of contents, since it is attribution rather than
-   a section to navigate to. */
+   First thing in the content, so it sits directly under the page title.
+   Authored as a raw <h3> rather than markdown so it stays out of the table of
+   contents, since it is attribution rather than a section to navigate to. */
 .sl-markdown-content h3.editorial-author {
-  margin-top: 1rem;
+  margin-top: 0;
 }
