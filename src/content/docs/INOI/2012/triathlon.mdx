@@ -16,13 +16,13 @@ as possible.
 
 ## Where the time actually goes
 
-Let's fix an order, and relabel the citizens so the queue runs $1, 2, \ldots, N$. Follow whoever is
-$k$-th. They cannot touch the computer until everyone ahead of them is finished with it, so they
-start at $a_1 + \cdots + a_{k-1}$ and hold it for $a_k$. After that nothing delays them, since the
-last two tracks have no capacity limit, so they finish at
+Let's fix an order $p_1, p_2, \ldots, p_N$ and follow whoever is $k$-th in the queue. They cannot
+touch the computer until everyone ahead of them is finished with it, so they start at
+$a_{p_1} + \cdots + a_{p_{k-1}}$ and hold it for $a_{p_k}$. After that nothing delays them, since
+the last two tracks have no capacity limit, so they finish at
 
 $$
-a_1 + a_2 + \cdots + a_k + b_k + c_k
+\left( \sum_{j=1}^{k} a_{p_j} \right) + b_{p_k} + c_{p_k}
 $$
 
 The event ends when the slowest of them is done, so the answer is the maximum of this over all $k$.
@@ -32,8 +32,8 @@ Try to see what you can do with this formula. The solution is mostly hidden in i
 <details>
 <summary>Hint 1</summary>
 
-Look at how $b_k$ and $c_k$ appear. They never show up apart from each other, only ever as a sum.
-So a citizen is really just two numbers: the time $a_i$ they block the computer for, and
+Look at how $b_{p_k}$ and $c_{p_k}$ appear. They never show up apart from each other, only ever as
+a sum. So a citizen is really just two numbers: the time $a_i$ they block the computer for, and
 $w_i = b_i + c_i$ they spend on their own afterwards.
 
 </details>
