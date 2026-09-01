@@ -109,12 +109,12 @@ table th {
 }
 
 /* Math (KaTeX)
-   KaTeX ships at 1.21em so that sub- and superscripts stay legible, but next
-   to Starlight's sans body text the serif math ends up looking oversized.
-   Matching body text exactly puts subscripts at a true 0.7em. This is the
-   dial to turn if math starts reading too small instead. */
+   KaTeX ships at 1.21em, which reads a little large next to Starlight's sans
+   body text. 1.1em sits between the two: math stays slightly larger than the
+   prose, and nested subscripts stay legible. Note the katex version must match
+   the one rehype-katex renders with, or none of the sizing rules apply. */
 .katex {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 /* Display math is nowrap by default, so let long formulae scroll
