@@ -96,17 +96,6 @@ export default defineConfig({
                       { label: '2009', items: [{ autogenerate: { directory: 'INOI/2009' } }] },
                   ],
               },
-              {
-                  label: 'Guides',
-                  items: [
-                      // Each item here is one entry in the navigation menu.
-                      { label: 'Example Guide', slug: 'guides/example' },
-                  ],
-              },
-              {
-                  label: 'Reference',
-                  items: [{ autogenerate: { directory: 'reference' } }],
-              },
           ],
       }),
 	],

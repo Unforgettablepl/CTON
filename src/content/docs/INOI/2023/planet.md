@@ -4,5 +4,5 @@ sidebar:
   order: 1
 ---
 
-# Planet
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2301)
 
