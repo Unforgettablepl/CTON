@@ -2,6 +2,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { visit } from 'unist-util-visit';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 import cloudflare from '@astrojs/cloudflare';
 
@@ -9,6 +11,8 @@ function rehypeHighlight() {
     return (/** @type {any} */ tree) => {
         visit(tree, (node) => {
             if (!node.children || !Array.isArray(node.children)) return;
+            const cls = node.properties?.className;
+            if (Array.isArray(cls) && cls.includes('math')) return;
             const newChildren = [];
             for (let i = 0; i < node.children.length; i++) {
                 const child = node.children[i];
@@ -54,7 +58,8 @@ function rehypeHighlight() {
 // https://astro.build/config
 export default defineConfig({
   markdown: {
-      rehypePlugins: [rehypeHighlight],
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeHighlight, rehypeKatex],
 	},
 
   integrations: [
@@ -70,7 +75,7 @@ export default defineConfig({
                   },
               },
           ],
-          customCss: ['./src/styles/custom.css'],
+          customCss: ['katex/dist/katex.min.css', './src/styles/custom.css'],
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
           sidebar: [
               {
