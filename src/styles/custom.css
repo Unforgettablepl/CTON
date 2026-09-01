@@ -126,13 +126,10 @@ table th {
 }
 
 /* Editorial byline
-   Sits just under the problem link at the top of the page, so it reads as
-   attribution rather than a section title. Authored as a raw <h3> rather than
-   markdown so it stays out of the table of contents. */
+   Sits just under the problem link at the top of the page. Rendered at full h3
+   size to match the other headings. Authored as a raw <h3> rather than markdown
+   so it stays out of the table of contents, since it is attribution rather than
+   a section to navigate to. */
 .sl-markdown-content h3.editorial-author {
-  margin-top: 0.4rem;
-  font-size: var(--sl-text-sm);
-  font-weight: 400;
-  color: var(--sl-color-gray-3);
-  letter-spacing: 0.01em;
+  margin-top: 1rem;
 }
