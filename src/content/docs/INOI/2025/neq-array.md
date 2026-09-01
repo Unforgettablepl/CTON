@@ -4,5 +4,4 @@ sidebar:
   order: 1
 ---
 
-# Neq Array
-
+[**Problem Link**](https://codeforces.com/gym/105706/problem/A)

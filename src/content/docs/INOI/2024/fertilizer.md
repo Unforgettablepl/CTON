@@ -4,5 +4,4 @@ sidebar:
   order: 2
 ---
 
-# Fertilizer
-
+[**Problem Link**](https://codeforces.com/gym/106224/problem/B)

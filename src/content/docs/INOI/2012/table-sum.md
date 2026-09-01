@@ -4,5 +4,5 @@ sidebar:
   order: 2
 ---
 
-# Table Sum
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI1202)
 

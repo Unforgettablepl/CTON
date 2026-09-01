@@ -4,5 +4,5 @@ sidebar:
   order: 1
 ---
 
-# Triathlon
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI1201)
 

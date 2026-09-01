@@ -4,5 +4,5 @@ sidebar:
   order: 3
 ---
 
-# History
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2303)
 

@@ -4,5 +4,5 @@ sidebar:
   order: 3
 ---
 
-# Diocletian
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2203A)
 

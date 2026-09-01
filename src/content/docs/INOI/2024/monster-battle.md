@@ -4,5 +4,5 @@ sidebar:
   order: 1
 ---
 
-# Monster Battle
+[**Problem Link**](https://codeforces.com/gym/106224/problem/A)
 

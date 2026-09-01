@@ -1,38 +1,50 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Indian Olympiad in Informatics Archive
+description: Comprehensive archive of Indian Computing Olympiad and INOI problem statements, solutions, editorials, and cutoffs.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: A comprehensive archive of problem statements, test data, editorials, and cutoffs from the Indian National Olympiad in Informatics (INOI) and Indian Computing Olympiad (ICO).
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Browse INOI Problems
+      link: /inoi/overview/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Official IARCS Portal
+      link: https://www.iarcs.org.in/inoi/
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Next steps
+## Archive Overview
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="18+ Years of Problems" icon="document">
+		Explore archive collections from **2009 to 2026**, covering over 40 distinct algorithmic challenges from the Indian National Olympiad in Informatics.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Status & Progress Tracking" icon="list-format">
+		Track problem links, official statements, editorials, PDFs, and historical cutoffs in a consolidated overview matrix.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Core Algorithmic Topics" icon="laptop">
+		Practice dynamic programming, tree algorithms, graph traversals, data structures, and combinatorics tested at national selection.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="The Road to IOI" icon="rocket">
+		The INOI competition is the gateway to the International Olympiad in Informatics Training Camp (IOITC) and representing India at the IOI.
 	</Card>
 </CardGrid>
+
+## Quick Access
+
+<CardGrid>
+	<LinkCard
+		title="INOI Overview & Problem Tracker"
+		description="View the complete problem status matrix across all years."
+		href="/inoi/overview/"
+	/>
+	<LinkCard
+		title="Recent Problems (2026)"
+		description="Jump straight into the newest problem set from INOI 2026."
+		href="/inoi/2026/p1/"
+	/>
+</CardGrid>
+

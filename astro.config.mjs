@@ -59,7 +59,7 @@ export default defineConfig({
 
   integrations: [
       starlight({
-          title: 'My Docs',
+          title: 'Indian Olympiad in Informatics Archive',
           head: [
               {
                   tag: 'link',

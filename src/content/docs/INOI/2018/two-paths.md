@@ -4,5 +4,5 @@ sidebar:
   order: 2
 ---
 
-# Two Paths
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/TWOPATHS)
 

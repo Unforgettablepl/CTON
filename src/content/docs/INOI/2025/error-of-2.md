@@ -4,5 +4,5 @@ sidebar:
   order: 2
 ---
 
-# Error of 2
+[**Problem Link**](https://codeforces.com/gym/105706/problem/B)
 

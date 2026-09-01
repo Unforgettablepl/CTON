@@ -4,5 +4,5 @@ sidebar:
   order: 2
 ---
 
-# 3xN Tiling
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2002)
 
