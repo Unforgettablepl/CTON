@@ -1,0 +1,171 @@
+---
+title: "Calvin's Game"
+sidebar:
+  order: 1
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI1301)
+
+<h3 class="editorial-author">Editorial author: Roumak Das</h3>
+
+## Abridged statement
+
+There are $N$ squares in a row, numbered $1$ to $N$, with an integer written in each. Calvin starts
+at square $k$ and plays a forward phase followed by a backward phase. In the forward phase every
+move goes from $p$ to $p+1$ or $p+2$; in the backward phase every move goes from $p$ to $p-1$ or
+$p-2$. Either phase may consist of zero moves, and he must finish at square $1$. Every time he
+jumps onto a square he adds that square's number to his score, and the square he starts on does not
+count. Maximise the score.
+
+$1 \le N \le 10^6$ and every number is between $-1000$ and $1000$. The limits are 4 seconds and
+128 MB.
+
+## Editorial
+
+### Two legs and a turning point
+
+The shape of any game is fixed: Calvin walks up from $k$ to some square $m$, turns around, and
+walks down from $m$ to $1$. Call $m$ the turning point. It satisfies $m \ge k$, and $m = k$ just
+means he turned around immediately.
+
+The two legs never interfere with each other. The forward leg only cares about how it gets from $k$
+to $m$, and the backward leg only cares about how it gets from $m$ down to $1$.
+
+<details>
+<summary>Hint 1</summary>
+
+If somebody handed you the turning point $m$, could you solve the two legs independently? Each one
+on its own is a plain one dimensional problem: land on squares using steps of $1$ or $2$ and
+collect as much as possible.
+
+</details>
+
+<details>
+<summary>Hint 2</summary>
+
+The backward leg from $m$ to $1$ does not depend on $k$ at all. So it can be computed once for
+every square, not once per turning point.
+
+The forward leg does depend on $k$, but $k$ is fixed by the input, so that is also just one sweep.
+
+</details>
+
+<details>
+<summary>Key idea</summary>
+
+<Aside type="tip" title="Key idea">
+Compute the best forward score to every square and the best backward score from every square, then
+try all turning points.
+</Aside>
+
+Two $O(N)$ sweeps followed by one $O(N)$ scan over $m$.
+
+</details>
+
+### The two sweeps
+
+Let $up_i$ be the best score of a forward walk from $k$ to $i$, counting every square landed on but
+not the starting square. Starting at $k$ costs nothing, and any other square is reached from one or
+two below it:
+
+$$
+up_k = 0, \qquad up_i = a_i + \max(up_{i-1}, up_{i-2}) \quad \text{for } i > k
+$$
+
+Let $down_i$ be the best score of a backward walk from $i$ to $1$, again counting every square
+landed on but not $i$ itself. Here the value being added belongs to the square being jumped to:
+
+$$
+down_1 = 0, \qquad down_i = \max(a_{i-1} + down_{i-1}, \; a_{i-2} + down_{i-2})
+$$
+
+Both recurrences only look one or two places back, so a single loop in the right direction fills
+each array. The answer is then
+
+$$
+\max_{m \, \ge \, k} \; (up_m + down_m)
+$$
+
+:::note[The turning point is counted once]
+$up_m$ includes $a_m$, because Calvin lands on $m$ during the forward leg, and $down_m$ excludes
+it, because it only counts squares below $m$. So adding them counts the turning point exactly once,
+which is what we want.
+
+Squares other than $m$ genuinely can be counted twice, once on the way up and once on the way down,
+and the sample relies on that.
+:::
+
+Both subtasks fall to the same code. The $N \le 3000$ subtask exists for solutions that try every
+turning point with a fresh $O(N)$ walk each time, which is $O(N^2)$.
+
+### Implementation
+
+```cpp title="calvins-game.cpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, k;
+    cin >> n >> k;
+
+    vector<long long> a(n + 1);
+    for (int i = 1; i <= n; i++) {
+        cin >> a[i];
+    }
+
+    vector<long long> down(n + 1, 0);
+    for (int i = 2; i <= n; i++) {
+        down[i] = a[i - 1] + down[i - 1];
+        if (i >= 3 && a[i - 2] + down[i - 2] > down[i]) {
+            down[i] = a[i - 2] + down[i - 2];
+        }
+    }
+
+    vector<long long> up(n + 1, 0);
+    for (int i = k + 1; i <= n; i++) {
+        up[i] = up[i - 1];
+        if (i - 2 >= k && up[i - 2] > up[i]) {
+            up[i] = up[i - 2];
+        }
+        up[i] += a[i];
+    }
+
+    long long ans = LLONG_MIN;
+    for (int i = k; i <= n; i++) {
+        long long total = up[i] + down[i];
+        if (total > ans) {
+            ans = total;
+        }
+    }
+
+    cout << ans << '\n';
+}
+```
+
+:::caution[Watch the accumulator]
+A journey lands on up to about $2N = 2 \times 10^6$ squares, each worth up to $1000$, so the score
+reaches around $2 \times 10^9$. Just use `long long` and save yourself the headache.
+:::
+
+Time complexity: $O(N)$. Memory is $O(N)$, about 24 MB for three arrays at $N = 10^6$, which is
+well inside the 128 MB limit.
+
+### Worked example
+
+The sample has $N = 5$, $k = 2$ and squares $5, 3, -2, 1, 1$.
+
+| $m$ | $up_m$ | $down_m$ | total |
+| :---: | :---: | :---: | :---: |
+| 2 | 0 | 5 | 5 |
+| 3 | $-2$ | 8 | 6 |
+| 4 | 1 | 8 | 9 |
+| 5 | 2 | 9 | **11** |
+
+The best turning point is $m = 5$. Forward, Calvin goes $2 \to 4 \to 5$ collecting $1 + 1 = 2$;
+backward he goes $5 \to 4 \to 2 \to 1$ collecting $1 + 3 + 5 = 9$. Square $4$ is counted on both
+legs, which is allowed, and the total is $11$ as expected.
