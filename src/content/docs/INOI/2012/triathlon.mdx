@@ -8,13 +8,22 @@ import { Aside } from '@astrojs/starlight/components';
 
 [**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI1201)
 
+## Abridged statement
+
 Every citizen goes through three tracks in the same order: programming, then pole vault, then
 doughnut eating. Citizen $i$ needs $a_i$, $b_i$ and $c_i$ time on them. There is only one
 computer, so at most one person can be programming at any moment, and we get to decide the queue.
 The other two tracks have room for everybody at once. We want the last person to finish as early
 as possible.
 
-## Where the time actually goes
+$1 \le N \le 200000$, and every time in the input is between $1$ and $10000$. The limits are 2
+seconds and 32 MB.
+
+## Editorial
+
+### Editorial author: Roumak Das
+
+### Where the time actually goes
 
 Let's fix an order $p_1, p_2, \ldots, p_N$ and follow whoever is $k$-th in the queue. They cannot
 touch the computer until everyone ahead of them is finished with it, so they start at
@@ -61,7 +70,7 @@ everyone else is still queueing. Notice that $a$ plays no part in the rule at al
 
 </details>
 
-## Why the sorted order is optimal
+### Why the sorted order is optimal
 
 As in the key idea above, write $w_i = b_i + c_i$ for the time citizen $i$ spends after leaving
 the computer.
@@ -93,7 +102,7 @@ then some adjacent pair in it is in the wrong relative order, and swapping that 
 increase the answer. Repeat the swap until the order is fully sorted. Nothing got worse along the
 way, so the sorted order is optimal. Ties in $w$ can go either way.
 
-## Implementation
+### Implementation
 
 Sort with the rule above, then walk through once carrying a running prefix sum.
 
@@ -141,7 +150,7 @@ The worst case is $200000 \times 10000 + 20000 = 2000020000$, which technically 
 Time complexity: $O(N \log N)$ for the sort and $O(N)$ for the sweep. Memory is $O(N)$. This fits
 well inside the 2 second and 32 MB limits, and the same code clears both subtasks.
 
-## Worked example
+### Worked example
 
 The sample gives $w = 13, 37, 23$ for citizens $1, 2, 3$, so sorting by descending $w$ puts them in
 the order $2, 3, 1$:
