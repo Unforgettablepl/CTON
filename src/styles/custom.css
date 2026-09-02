@@ -124,3 +124,62 @@ table th {
   overflow-y: hidden;
   padding-block: 0.5rem;
 }
+
+/* Problem card styling */
+.problem-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  background-color: var(--sl-color-gray-6, rgba(255, 255, 255, 0.03));
+  text-decoration: none !important;
+  color: inherit;
+  margin-block: 0.75rem;
+  box-shadow: var(--sl-shadow-sm);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.problem-card:hover {
+  background-color: var(--sl-color-gray-5, rgba(255, 255, 255, 0.06));
+  border-color: var(--sl-color-gray-3);
+  text-decoration: none !important;
+  transform: translateY(-1px);
+}
+
+.problem-card-title {
+  font-weight: 600;
+  font-size: var(--sl-text-base, 1rem);
+  color: var(--sl-color-white);
+  line-height: 1.35;
+  text-decoration: none !important;
+}
+
+.problem-card-source {
+  font-size: var(--sl-text-xs, 0.8125rem);
+  color: var(--sl-color-gray-3);
+  margin-top: 0.2rem;
+  line-height: 1.2;
+  text-decoration: none !important;
+}
+
+.problem-card-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--sl-color-gray-3);
+  flex-shrink: 0;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease;
+}
+
+.problem-card:hover .problem-card-icon {
+  color: var(--sl-color-text-accent, var(--sl-color-white));
+  transform: translate(2px, -2px);
+}
+
