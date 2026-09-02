@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 import { visit } from 'unist-util-visit';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -63,6 +64,9 @@ export default defineConfig({
 	},
 
   integrations: [
+      mermaid({
+          autoTheme: true,
+      }),
       starlight({
           title: 'Indian Olympiad in Informatics Archive',
           pagination: false,
