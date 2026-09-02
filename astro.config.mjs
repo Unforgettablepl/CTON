@@ -79,6 +79,32 @@ export default defineConfig({
           social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
           sidebar: [
               {
+                  label: 'Getting Started',
+                  items: [
+                      { label: 'Overview', slug: 'getting-started' },
+                      { label: 'Introduction', slug: 'getting-started/introduction' },
+                      {
+                          label: 'Built-in Data Structures',
+                          items: [
+                              { label: 'Overview', slug: 'getting-started/built-in' },
+                              { label: 'Vector', slug: 'getting-started/built-in/vector' },
+                              { label: 'Set', slug: 'getting-started/built-in/set' },
+                          ],
+                      },
+                      { label: 'Linear Search', slug: 'getting-started/linear-search' },
+                      {
+                          label: 'Implementation',
+                          items: [
+                              { label: 'Overview', slug: 'getting-started/implementation' },
+                              { label: 'Weird Algorithm', slug: 'getting-started/implementation/weird-algorithm' },
+                              { label: 'Missing Number', slug: 'getting-started/implementation/missing-number' },
+                              { label: 'Repetitions', slug: 'getting-started/implementation/repetitions' },
+                              { label: 'Increasing Array', slug: 'getting-started/implementation/increasing-array' },
+                          ],
+                      },
+                  ],
+              },
+              {
                   label: 'INOI',
                   items: [
                       { label: 'Overview', slug: 'inoi/overview' },
