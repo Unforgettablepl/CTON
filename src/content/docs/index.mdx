@@ -1,50 +1,34 @@
 ---
-title: Indian Olympiad in Informatics Archive
-description: Comprehensive archive of Indian Computing Olympiad and INOI problem statements, solutions, editorials, and cutoffs.
+title: CTON
+description: A written resource by SPOI covering getting started guides, cutoffs, editorials, and more for the Indian National Olympiad in Informatics.
 template: splash
 hero:
-  tagline: A comprehensive archive of problem statements, test data, editorials, and cutoffs from the Indian National Olympiad in Informatics (INOI) and Indian Computing Olympiad (ICO).
+  tagline: A written resource by SPOI covering getting started guides, editorials, cutoffs, and problem archives for the Indian National Olympiad in Informatics.
   actions:
-    - text: Browse INOI Problems
-      link: /inoi/overview/
+    - text: Get Started
+      link: /getting-started/
       icon: right-arrow
-    - text: Official IARCS Portal
-      link: https://www.iarcs.org.in/inoi/
-      icon: external
+    - text: Browse INOI Archive
+      link: /inoi/overview/
+      icon: open-book
       variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Archive Overview
+## What's Inside
 
 <CardGrid stagger>
-	<Card title="18+ Years of Problems" icon="document">
-		Explore archive collections from **2009 to 2026**, covering over 40 distinct algorithmic challenges from the Indian National Olympiad in Informatics.
+	<Card title="Getting Started Guide" icon="open-book">
+		New to competitive programming? Start here, we have an in-depth getting started guide.
 	</Card>
-	<Card title="Status & Progress Tracking" icon="list-format">
-		Track problem links, official statements, editorials, PDFs, and historical cutoffs in a consolidated overview matrix.
+	<Card title="INOI Archive" icon="document">
+		Problem statements, editorials, and cutoffs from **2009 to 2026**, from the Indian National Olympiad in Informatics.
 	</Card>
-	<Card title="Core Algorithmic Topics" icon="laptop">
-		Practice dynamic programming, tree algorithms, graph traversals, data structures, and combinatorics tested at national selection.
+	<Card title="Editorials & Solutions" icon="pencil">
+		In-depth write-ups explaining the key observations and techniques behind each problem.
 	</Card>
-	<Card title="The Road to IOI" icon="rocket">
-		The INOI competition is the gateway to the International Olympiad in Informatics Training Camp (IOITC) and representing India at the IOI.
+	<Card title="Cutoffs & Statistics" icon="list-format">
+		Historical cutoff scores and selection data to help you benchmark your performance and understand the competition landscape.
 	</Card>
 </CardGrid>
-
-## Quick Access
-
-<CardGrid>
-	<LinkCard
-		title="INOI Overview & Problem Tracker"
-		description="View the complete problem status matrix across all years."
-		href="/inoi/overview/"
-	/>
-	<LinkCard
-		title="Recent Problems (2026)"
-		description="Jump straight into the newest problem set from INOI 2026."
-		href="/inoi/2026/p1/"
-	/>
-</CardGrid>
-

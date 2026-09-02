@@ -68,7 +68,7 @@ export default defineConfig({
           autoTheme: true,
       }),
       starlight({
-          title: 'Indian Olympiad in Informatics Archive',
+          title: 'CTON',
           pagination: false,
           head: [
               {
@@ -80,7 +80,7 @@ export default defineConfig({
               },
           ],
           customCss: ['katex/dist/katex.min.css', './src/styles/custom.css'],
-          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+          social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Unforgettablepl/CTON' }],
           sidebar: [
               {
                   label: 'Getting Started',
