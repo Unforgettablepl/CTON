@@ -1,0 +1,7 @@
+---
+import ProblemCard, { type Props as ProblemCardProps } from './ProblemCard.astro';
+
+export type Props = ProblemCardProps;
+---
+
+<ProblemCard {...Astro.props}><slot /></ProblemCard>

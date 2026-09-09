@@ -1,8 +1,0 @@
----
-title: "Diocletian"
-sidebar:
-  order: 3
----
-
-[**Problem Link**](https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2203A)
-
